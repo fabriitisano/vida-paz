@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Paz - Complejo de Cabañas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/logoedit.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+
+
+
+  <body>
+
+    <!-- ENCABEZADO -->
+    <header>
+      <h1><img src="imagenes/logoedit.png" alt="Vida Paz" class="logo"></h1>
+      <nav>
+        <a href="#cabanas">Cabañas</a>
+        <a href="#informacion">Información</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#conocenos">Conócenos</a>
+        <a href="#contactanos">Contáctanos</a>
+      </nav>
+    </header>
+<!-- HERO / PORTADA -->
+    <div class="hero">
+        <div class="hero-contenido">
+            <h2>Bienvenidos a Vida Paz</h2>
+         <p>Escapate del ruido. Encontrá tu lugar en la naturaleza.</p>
+            <a href="#cabanas" class="boton">Ver Cabañas</a>
+        </div>
+    </div>
+    <!-- SECCIONES (vacías por ahora) -->
+<!-- GALERÍA DE PAISAJES -->
+<section class="galeria-paisajes">
+    <h2 class="aparecer">El lugar</h2>
+    <p class="seccion-subtitulo aparecer">Descubrí la naturaleza que te espera</p>
+
+    <div class="tira-contenedor aparecer" id="tira-contenedor">
+        <div class="tira-track" id="tira-track">
+            <div class="tira-item"><img src="imagenes/vidapaz.jpeg" alt="Paisaje 1"></div>
+            <div class="tira-item"><img src="imagenes/pp2.jpeg" alt="Paisaje 2"></div>
+            <div class="tira-item"><img src="imagenes/p5.jpeg" alt="Paisaje 3"></div>
+            <div class="tira-item"><img src="imagenes/p2.jpeg" alt="Paisaje 4"></div>
+            <div class="tira-item"><img src="imagenes/p3.jpeg" alt="Paisaje 5"></div>
+            <div class="tira-item"><img src="imagenes/estanque.jpeg" alt="Paisaje 6"></div>
+            <div class="tira-item"><img src="imagenes/pp3.jpeg" alt="Paisaje 7"></div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<!-- LIGHTBOX GALERÍA -->
+<div class="lightbox" id="lightbox" onclick="cerrarGaleria()">
+    <button class="lightbox-cerrar" onclick="cerrarGaleria()">✕</button>
+    <button class="lightbox-btn izq" onclick="event.stopPropagation(); cambiarLightbox(-1)">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+    <button class="lightbox-btn der" onclick="event.stopPropagation(); cambiarLightbox(1)">&#8250;</button>
+    <div class="lightbox-puntos" id="lightbox-puntos"></div>
+</div>
+    <section id="cabanas">
+    <h2>Cabañas</h2>
+    <p class="seccion-subtitulo">Elegí tu espacio ideal para descansar</p>
+
+    <div class="grilla-cabanas">
+
+        <div class="tarjeta" onclick="abrirModal('cabana1')">
+            <img src="imagenes/frentecas.jpeg" alt="Cabaña 1">
+            <div class="tarjeta-info">
+                <h3>Cabaña 1</h3>
+                <p class="capacidad"> 6 personas</p>
+                <p class="tarjeta-ver-mas">Ver más →</p>
+            </div>
+        </div>
+
+        <div class="tarjeta" onclick="abrirModal('cabana2')">
+            <img src="imagenes/frente_ep.jpeg" alt="Cabaña Entre Piso">
+            <div class="tarjeta-info">
+                <h3>Cabaña "Entre Piso"</h3>
+                <p class="capacidad"> 4 personas</p>
+                <p class="tarjeta-ver-mas">Ver más →</p>
+            </div>
+        </div>
+
+        <div class="tarjeta" onclick="abrirModal('cabana3')">
+            <img src="imagenes/frenteA.jpeg" alt="Cabaña Gemela A">
+            <div class="tarjeta-info">
+                <h3>Cabaña "Gemela A"</h3>
+                <p class="capacidad"> 4 personas</p>
+                <p class="tarjeta-ver-mas">Ver más →</p>
+            </div>
+        </div>
+
+        <div class="tarjeta" onclick="abrirModal('cabana4')">
+            <img src="imagenes/frenteB.jpeg" alt="Cabaña Gemela B">
+            <div class="tarjeta-info">
+                <h3>Cabaña "Gemela B"</h3>
+                <p class="capacidad"> 4 personas</p>
+                <p class="tarjeta-ver-mas">Ver más →</p>
+            </div>
+        </div>
+
+    </div>
+
+    
+<!-- MODAL -->
+<div class="modal-fondo" id="modal-fondo" onclick="cerrarModal()">
+    <div class="modal-contenido" onclick="event.stopPropagation()">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+
+        <div class="modal-layout">
+
+            <!-- LADO IZQUIERDO - FOTOS -->
+            <div class="modal-fotos">
+                <button class="carrusel-btn izq" onclick="cambiarImagen(-1)">&#8249;</button>
+                <img id="modal-img" src="" alt="">
+                <button class="carrusel-btn der" onclick="cambiarImagen(1)">&#8250;</button>
+                <div class="modal-puntos" id="modal-puntos"></div>
+            </div>
+
+            <!-- LADO DERECHO - DETALLES -->
+            <div class="modal-detalles">
+                <h3 id="modal-titulo"></h3>
+                <p id="modal-capacidad"></p>
+                <ul id="modal-lista"></ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+    </section>
+
+ <section id="informacion">
+    <h2>Información</h2>
+    <p class="seccion-subtitulo">Todo lo que necesitás saber antes de tu estadía</p>
+
+    <div class="info-grilla">
+
+        <!-- SERVICIOS -->
+        <div class="info-card">
+            <h3> La cabaña incluye</h3>
+            <ul>
+                <li>Internet WiFi</li>
+                <li>Ventiladores en habitación y comedor</li>
+                <li>TV Smart con Netflix y YouTube</li>
+                <li>Ropa blanca (sábanas, cubrecamas, toallas)</li>
+                <li>Vajilla completa para 6 personas</li>
+                <li>Cocina con horno</li>
+                <li>Heladera con freezer</li>
+                <li>Lavarropas</li>
+                <li>Salamandra</li>
+                <li>Luz de emergencia</li>
+                <li>Asador portátil con kit</li>
+                <li>Colchones de excelente calidad</li>
+            </ul>
+        </div>
+
+        <!-- ESPACIOS EXTERIORES -->
+        <div class="info-card">
+            <h3> Espacios exteriores</h3>
+            <ul>
+                <li>Pileta de 12 mts con solárium húmedo y seco</li>
+                <li>Reposeras, sombrilla y sillones de jardín</li>
+                <li>Arco de fútbol y cancha de vóley</li>
+                <li>Terreno de 4.500 mts con césped</li>
+            </ul>
+        </div>
+
+        <!-- RESERVAS -->
+        <div class="info-card">
+            <h3> Reservas</h3>
+            <ul>
+                <li>Tarifa mínima 2 noches</li>
+                <li>Seña del 40% por transferencia bancaria</li>
+                <li>Saldo en efectivo al momento del ingreso</li>
+                <li>Las reservas NO son reembolsables</li>
+                <li>Tarifas sujetas a modificación sin previo aviso</li>
+            </ul>
+        </div>
+
+        <!-- IMPORTANTE -->
+        <div class="info-card info-card-importante">
+            <h3> Importante</h3>
+            <ul>
+                <li>No se aceptan visitas durante la estadía</li>
+                <li>Reservas confirmadas con depósito no sufren cambios de tarifa</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="ubicacion">
+    <h2>Ubicación</h2>
+    <p class="seccion-subtitulo">Encontranos en Traslasierra, Córdoba</p>
+
+    <div class="ubicacion-contenedor">
+
+        <div class="ubicacion-info">
+            <h3>¿Cómo llegar?</h3>
+            <p>📍 Traslasierra, Córdoba, Argentina</p>
+            <p>🚗 A 2hs de la ciudad de Córdoba</p>
+            <p>📞 3518040797</p>
+            <p>📸 @vida_paz_traslasierras</p>
+            <a href="tel:3518040797" class="boton" style="display:inline-block; margin-top:20px;">
+                Realizar una reserva
+            </a>
+        </div>
+
+        <div class="mapa-contenedor">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1735770.616761826!2d-67.08159549999999!3d-31.820172899999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d2f0028504445%3A0x60fbf316bde97676!2sCaba%C3%B1as%20Vida%20paz!5e0!3m2!1ses!2sar!4v1776896932758!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            
+        </div>
+
+    </div>
+<section id="conocenos" class="seccion-oscura">
+    <h2 class="aparecer">Conócenos</h2>
+    <p class="seccion-subtitulo aparecer">La historia detrás de Vida Paz</p>
+
+    <div class="conocenos-contenedor aparecer">
+        <div class="conocenos-texto">
+            <p>Vida Paz nació hace 5 años de un sueño familiar: crear un refugio en el corazón de Traslasierra donde cada persona pudiera desconectarse del ruido del mundo y reconectar con lo esencial.</p>
+            <p>Somos una familia que eligió las sierras de Córdoba no solo como lugar de vida, sino como filosofía. Creemos que el descanso verdadero se encuentra en la naturaleza, en los amaneceres que detienen el tiempo y en los atardeceres que invitan a respirar profundo.</p>
+            <p>Cada cabaña fue pensada y construida con dedicación, cuidando cada detalle para que te sientas como en casa — o incluso mejor. Porque para nosotros, cada huésped no es un cliente, es alguien que elegimos recibir con el corazón abierto.</p>
+            <p>Cinco años después, seguimos apostando al mismo sueño con la misma pasión del primer día. Gracias por ser parte de esta historia. 🤍</p>
+        </div>
+
+        <div class="conocenos-datos">
+            <div class="dato-item">
+                <span class="dato-numero">5</span>
+                <span class="dato-label">Años de historia</span>
+            </div>
+            <div class="dato-item">
+                <span class="dato-numero">4</span>
+                <span class="dato-label">Cabañas únicas</span>
+            </div>
+            <div class="dato-item">
+                <span class="dato-numero">4.9</span>
+                <span class="dato-label">Estrellas en Google</span>
+            </div>
+            <div class="dato-item">
+                <span class="dato-numero">+35</span>
+                <span class="dato-label">Familias felices</span>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/543518040797?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20las%20reservas%20" 
+   target="_blank" 
+   class="boton-wsp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+         alt="WhatsApp">
+</a>
+<!-- RESEÑAS -->
+<section class="resenas-seccion seccion-oscura">
+    <h2 class="aparecer">Lo que dicen nuestros huéspedes</h2>
+    <p class="seccion-subtitulo aparecer">Experiencias reales de quienes nos visitaron</p>
+
+    <div class="resenas-estrella aparecer">
+        <span>⭐⭐⭐⭐⭐</span>
+        <p>4.9 · 35 reseñas en Google Maps</p>
+    </div>
+
+    <div class="resenas-carrusel aparecer">
+        <div class="resenas-track" id="resenas-track">
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">P</div>
+                    <div>
+                        <h4>Pilar Gareca</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Vida Paz tiene de esos amaneceres que parecen de otro planeta. Las cabañas son muy cómodas y los anfitriones, un diez: cercanos, atentos, te hacen sentir realmente en casa."</p>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">M</div>
+                    <div>
+                        <h4>Mickaela Sanz</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Las mejores cabañas de Traslasierra, hace honor a su nombre, ¡mucha paz! Una vista soñada, la pileta es divina, un parque hermoso. Dormí mejor que nunca."</p>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">R</div>
+                    <div>
+                        <h4>Romina Fovakis</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Un lugar soñado para relajarse y descansar con una vista increíble de las sierras. Las cabañas tienen todo lo necesario en perfectas condiciones. Cuesta irse... ya pensando en volver."</p>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">F</div>
+                    <div>
+                        <h4>Franco Tisano</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Todo estuvo increíble. El lugar es tal cual se ve en las fotos, o incluso mejor. Súper cómodo, limpio, bien equipado y con una onda muy linda."</p>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">R</div>
+                    <div>
+                        <h4>Romina Acosta</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Hermoso complejo de cabañas, muy ordenado, limpio, prolijo, completo, cómodo. Estuvimos una semana en familia y la pasamos fantástico."</p>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-header">
+                    <div class="resena-avatar">A</div>
+                    <div>
+                        <h4>Aldana SC</h4>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p>"Hermosa cabaña, el predio amplio y re bien cuidado. Re bien equipada, acogedora y muy cómoda. Natalia una gran anfitriona, estuvo pendiente todo el tiempo. ¡Volveremos sin dudas!"</p>
+            </div>
+
+        </div>
+
+        <div class="resenas-puntos" id="resenas-puntos"></div>
+    </div>
+
+</section>
+<footer id="contactanos">
+    <div class="footer-contenido">
+
+        <!-- COLUMNA 1 - LOGO Y DESCRIPCIÓN -->
+        <div class="footer-col">
+            <img src="imagenes/logoedit.png" alt="Vida Paz" class="footer-logo">
+            <p>Escapate del ruido. Encontrá tu lugar en la naturaleza, en el corazón de Traslasierra.</p>
+        </div>
+
+        <!-- COLUMNA 2 - NAVEGACIÓN -->
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#cabanas">Cabañas</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#conocenos">Conócenos</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
+            </ul>
+        </div>
+
+        <!-- COLUMNA 3 - CONTACTO -->
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📞 <a href="tel:3518040797">351 804 0797</a></p>
+            <p>📍 Traslasierra, Córdoba</p>
+            <p>⏰ Check-in desde las 14hs</p>
+        </div>
+
+        <!-- COLUMNA 4 - REDES -->
+        <div class="footer-col">
+            <h4>Seguinos</h4>
+            <a href="https://www.instagram.com/vida_paz_traslasierras" 
+               target="_blank" 
+               class="footer-instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                </svg>
+                @vida_paz_traslasierras
+            </a>
+            <a href="https://wa.me/543518040797?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20las%20reservas%20" 
+               target="_blank" 
+               class="footer-wsp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.124 1.522 5.866L.044 23.233a.75.75 0 00.906.932l5.565-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.7-.512-5.243-1.406l-.377-.225-3.904 1.023 1.05-3.794-.246-.393A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 5.477 10 10-4.477 10-10 10z"/>
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-inferior">
+        <p>© 2026 Vida Paz · Todos los derechos reservados · Traslasierra, Córdoba</p>
+    </div>
+</footer>
+      <script src="script.js"></script>
+  </body>
+
+</html>
