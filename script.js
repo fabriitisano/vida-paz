@@ -93,7 +93,7 @@ function abrirModal(id) {
 
     actualizarPuntos();
     document.getElementById('modal-fondo').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    
 }
 
 function actualizarImagen() {
@@ -126,7 +126,7 @@ function cambiarImagen(direccion) {
 
 function cerrarModal() {
     document.getElementById('modal-fondo').style.display = 'none';
-    document.body.style.overflow = '';
+    
 }
 
 // Cerrar con tecla ESC

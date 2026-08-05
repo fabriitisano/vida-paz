@@ -318,6 +318,8 @@ section h2 {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    
+    
 }
  
 .modal-contenido {
@@ -367,7 +369,10 @@ section h2 {
     background-color: var(--gris-oscuro);
     display: block;
 }
- 
+.no-scroll{
+    overflow:hidden;
+    height:100%
+}
 .carrusel-btn {
     position: absolute;
     top: 50%;
