@@ -57,6 +57,6 @@ Ubicación: Traslasierra, Córdoba, Argentina
 
 
 🚀 Deploy
-El sitio está publicado en Netlify.
+El sitio está publicado en Github pages.
 
 Desarrollado con ❤️ para Vida Paz Vacaciones
